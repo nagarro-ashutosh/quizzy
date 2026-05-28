@@ -1,0 +1,11 @@
+id,question,optionA,optionB,optionC,optionD,correct,category,difficulty
+q-001,Which HTML element defines the main content of a document?,section,main,article,body,B,HTML,Easy
+q-002,Which CSS property controls the space between grid columns?,column-gap,grid-space,column-space,grid-padding,A,CSS,Easy
+q-003,What does React use to keep UI in sync with state changes?,A template compiler,A virtual DOM and reconciliation,Server polling,Manual DOM selectors,B,React,Medium
+q-004,Which TypeScript feature narrows a value after a runtime check?,Type guards,Namespaces,Decorators,Declaration merging,A,TypeScript,Medium
+q-005,Which HTTP status code means unauthorized?,400,401,403,409,B,Web,Easy
+q-006,Which browser API is best for moving CSV parsing off the UI thread?,Web Worker,Intersection Observer,Resize Observer,Clipboard API,A,Performance,Easy
+q-007,What should a route guard verify before rendering protected content?,Only the URL path,Session validity and role,Screen width,Browser language,B,Security,Medium
+q-008,Which ARIA technique announces changing timer text to assistive tech?,aria-hidden,aria-current,aria-live,aria-pressed,C,Accessibility,Easy
+q-009,What is the purpose of React.lazy?,Route or component code splitting,Encrypting JavaScript,CSS minification,Disabling hydration,A,Performance,Medium
+q-010,Which meta tags are useful when sharing a result page?,Open Graph tags,Viewport only,Charset only,Refresh tags,A,SEO,Medium
