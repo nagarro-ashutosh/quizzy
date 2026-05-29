@@ -1,15 +1,25 @@
 import type { NextConfig } from "next";
+const isDev = process.env.NODE_ENV === "development";
+const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
 
-const csp = [
-  "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
-  "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data:",
-  "font-src 'self' data:",
-  "connect-src 'self' ws: http://localhost:* http://127.0.0.1:*",
-  "worker-src 'self' blob:",
-].join("; ");
+const cspHeader = `
+   default-src 'self';
+    script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""};
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' blob: data:;
+    font-src 'self';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+    upgrade-insecure-requests;
+`;
+
 const nextConfig: NextConfig = {
+  env: {
+    NEXT_RUNTIME_NODE_ENV: "development",
+  },
+
   async redirects() {
     return [
       {
@@ -26,7 +36,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Content-Security-Policy",
-            value: csp,
+            value: cspHeader.replace(/\n/g, ""),
           },
         ],
       },

@@ -170,7 +170,7 @@ const LoginPage = () => {
                         required
                       />
                       <TextField
-                        label="Access code"
+                        label="Participant Password"
                         type="password"
                         value={participantDetails.p_password}
                         onChange={(event) =>
@@ -180,7 +180,7 @@ const LoginPage = () => {
                         required
                       />
                       <Typography sx={{ color: "text.secondary" }}>
-                        Demo access code: participant123
+                        Demo access code: 123123
                       </Typography>
                     </Stack>
                   )}

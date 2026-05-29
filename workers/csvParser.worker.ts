@@ -20,7 +20,7 @@ function sanitizePlainText(value: unknown, maxLength = 700) {
   if (typeof value !== "string") {
     return "";
   }
-
+  // --Stripping Malicious Code & Markup--
   return stripControlCharacters(value)
     .replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, " ")
     .replace(/<style[\s\S]*?>[\s\S]*?<\/style>/gi, " ")
